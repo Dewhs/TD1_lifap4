@@ -2,12 +2,20 @@
 
 Pixel::Pixel()
 {
-    r, g, b = 0;
+    int z = 0;
+    r = z;
+    g = z;
+    b = z;
+
 }
 
 // Constructeur de la classe: initialise r,g,b avec les paramètresL
 Pixel::Pixel(unsigned char nr, unsigned char ng, unsigned char nb) : r(nr), g(ng), b(nb)
 {
+}
+
+Pixel::~Pixel() {
+    
 }
 
 // Accesseur : récupère la composante rouge du pixel
@@ -16,7 +24,7 @@ unsigned char Pixel::getRouge() const
     return r;
 }
 // Accesseur : récupère la composante verte du pixel
-unsigned char Pixel::getVert() const 
+unsigned char Pixel::getVert() const
 {
     return g;
 }
@@ -41,3 +49,4 @@ void Pixel::setBleu(unsigned char nb)
 {
     b = nb;
 }
+
