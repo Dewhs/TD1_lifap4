@@ -15,7 +15,7 @@ public:
     Image();
     // Constructeur de la classe : initialise selon dimensionX et dimensionY
     // puis alloue le tableau de pixel dans le tas (image noire)
-    //Image(int dimensionX, int dimensionY);
+    Image(int dimensionX, int dimensionY);
 
     // Destructeur de la classe : désallocation de la mémoire du tableau de pixels
     // et mise à jour des champs dimx et dimy à 0
