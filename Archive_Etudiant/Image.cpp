@@ -6,7 +6,7 @@ Image::Image()
 {
     dimx = 0;
     dimy = 0;
-    // tab = new Pixel[0];
+    tab = nullptr;
 }
 
 Image::Image(int dimensionX, int dimensionY)
@@ -14,12 +14,12 @@ Image::Image(int dimensionX, int dimensionY)
     assert(dimensionX > 0 && dimensionY > 0);
     dimx = dimensionX;
     dimy = dimensionY;
-    //tab = new Pixel[dimensionX * dimensionY];
+    tab = new Pixel[dimensionX * dimensionY];
 }
 
 Image::~Image()
 {
-    // delete tab;
+    delete [] tab;
 }
 
 Pixel Image::getPix(int &x, int &y)
@@ -54,5 +54,5 @@ void Image::effacer(Pixel &couleur)
 
 void Image::testRegression()
 {
-    std::cout << "Yo" << std::endl;
+    std::cout << "Test de Regression" << std::endl;
 }

@@ -7,9 +7,8 @@ using namespace std;
 int main()
 {
     Pixel test;
-    cout << "Salam" << endl;
-
-    Image monImage;
+    Image monImage(100,100);
+    monImage.dessinerRectangle(50,50,75,75,test);
     monImage.testRegression();
     return 0;
 }

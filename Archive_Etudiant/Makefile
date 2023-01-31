@@ -12,4 +12,4 @@ Pixel.o: Pixel.h
 	g++ -Wall -c Pixel.cpp
 
 clean:
-	rm -rf *.o
+	rm -rf *.o *.exe
