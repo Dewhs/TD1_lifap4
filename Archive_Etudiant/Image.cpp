@@ -54,5 +54,43 @@ void Image::effacer(Pixel &couleur)
 
 void Image::testRegression()
 {
-    std::cout << "Test de Regression" << std::endl;
+    std::cout << "## Début du test de régression ##" std::endl;
+
+    std::cout << "--- On va définir notre image en 50*50" << std::endl;
+    Image im1(50, 50);
+
+    std::cout << "- On vérifie les dimensions . " <<;
+    assert(im1.dimx == 50);
+    assert(im2.dimy == 50);
+    std::cout << ". [V]" << endl;
+
+    std::cout << "- On vérifie la taille du tableau alloué . " <<;
+    assert((sizeof(tab) / sizeof(int)) = 500);
+    std::cout << ". [V]" << endl;
+
+    std::cout << "- On vérifie que le pixel est noir . " <<;
+    for (int i = 0; i < im1.dimx; i++){
+        for (int j = 0; j < im1.dimy; j++){
+            assert(im1.getPix(j, i).getRouge()==0);
+            assert(im1.getPix(j, i).getBleu()==0);
+            assert(im1.getPix(j, i).getVert()==0)
+        }
+    }
+    std::cout << ". [V]" << endl;
+
+    std::cout << "-> On efface l'image (on dessine du vide) . " <<;
+    effacer(pix1)
+    for (int i = 0; i <= (y * x); i++){
+        assert(tab[i] = pix1)
+    }
+    std::cout << ". [V]";
+    
+    std::cout << "-> On set un pixel (au pixel par défaut, à un point tiré en random)" std::endl;
+    valx = 0; //TODO
+    valy = 0; //TODO
+    setPix(valx, valy, pix1);
+    assert(tab[valx * valy] = pix1);
+
+    std::cout << "## Test de régression terminé !! " << endl;
+
 }
