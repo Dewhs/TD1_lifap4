@@ -1,15 +1,17 @@
+CC = g++
+FLAGS = -g -Wall -c
 
 all: main.o Image.o Pixel.o
-	g++ main.o Image.o Pixel.o -o Prog.o
+	$(CC) main.o Image.o Pixel.o -o Prog.exe
 
 main.o: main.cpp Image.o
-	g++ -Wall -c main.cpp
+	$(CC) $(FLAGS) main.cpp
 
-Image.o: Image.h Pixel.o
-	g++ -Wall -c Image.cpp
+Image.o: Image.cpp Pixel.o 
+	$(CC) $(FLAGS) Image.cpp
 
-Pixel.o: Pixel.h
-	g++ -Wall -c Pixel.cpp
+Pixel.o: Pixel.cpp
+	$(CC) $(FLAGS) Pixel.cpp
 
 clean:
 	rm -rf *.o *.exe
