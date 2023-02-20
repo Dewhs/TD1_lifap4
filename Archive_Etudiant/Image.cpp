@@ -78,14 +78,14 @@ void Image::testRegression()
     }
     std::cout << ". [V]" << endl;
 
-    std::cout << "-> On efface l'image (on dessine du vide) . " <<;
-    effacer(pix1)
+    std::cout << "-> On rempli l'image d'une couleur. " <<;
+    //TODO remplir
     for (int i = 0; i <= (y * x); i++){
-        assert(tab[i] = pix1)
+        //TODO assert
     }
     std::cout << ". [V]";
-    
-    std::cout << "-> On set un pixel (au pixel par défaut, à un point tiré en random)" std::endl;
+
+    std::cout << "-> On set un pixel spécifique (au pixel par défaut, à un point tiré en random)" std::endl;
     valx = 0; //TODO
     valy = 0; //TODO
     setPix(valx, valy, pix1);
