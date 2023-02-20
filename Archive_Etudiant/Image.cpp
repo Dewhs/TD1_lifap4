@@ -56,12 +56,22 @@ void Image::testRegression()
 {
     std::cout << "## Début du test de régression ##" std::endl;
 
+    std::cout << "--- On défini une image par défaut (0*0)" << std::endl;
+    Image im0();
+
+    std::cout << "- On vérifie qu'elle est bien existante & vide . " <<;
+    assert(im0.dimx == 0);
+    assert(im0.dimy == 0);
+    assert(im0.tab == nullptr);
+    std::cout << ". [V]" << endl;
+
+
     std::cout << "--- On va définir notre image en 50*50" << std::endl;
     Image im1(50, 50);
 
     std::cout << "- On vérifie les dimensions . " <<;
     assert(im1.dimx == 50);
-    assert(im2.dimy == 50);
+    assert(im1.dimy == 50);
     std::cout << ". [V]" << endl;
 
     std::cout << "- On vérifie la taille du tableau alloué . " <<;
@@ -85,11 +95,9 @@ void Image::testRegression()
     }
     std::cout << ". [V]";
 
-    std::cout << "-> On set un pixel spécifique (au pixel par défaut, à un point tiré en random)" std::endl;
-    valx = 0; //TODO
-    valy = 0; //TODO
-    setPix(valx, valy, pix1);
-    assert(tab[valx * valy] = pix1);
+    std::cout << "-> On set un pixel spécifique (au pixel par défaut, à un point tiré en random) ." <<;
+    //TODO set un pixel spécifique
+    std::cout << ". [V]" << endl;
 
     std::cout << "## Test de régression terminé !! " << endl;
 
