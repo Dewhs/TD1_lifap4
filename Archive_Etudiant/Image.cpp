@@ -1,7 +1,6 @@
-#include <assert.h>
-#include <iostream>
 #include "Image.h"
 
+using namespace std;
 Image::Image()
 {
     dimx = 0;
@@ -54,51 +53,51 @@ void Image::effacer(Pixel &couleur)
 
 void Image::testRegression()
 {
-    std::cout << "## Début du test de régression ##" std::endl;
+    cout << "## Début du test de régression ##" << endl;
 
-    std::cout << "--- On défini une image par défaut (0*0)" << std::endl;
-    Image im0();
+    cout << "--- On défini une image par défaut (0*0)" << endl;
+    Image im0;
 
-    std::cout << "- On vérifie qu'elle est bien existante & vide . " <<;
+    cout << "- On vérifie qu'elle est bien existante & vide . ";
     assert(im0.dimx == 0);
     assert(im0.dimy == 0);
     assert(im0.tab == nullptr);
-    std::cout << ". [V]" << endl;
+    cout << ". [V]" << endl;
 
 
-    std::cout << "--- On va définir notre image en 50*50" << std::endl;
+    cout << "--- On va définir notre image en 50*50" << endl;
     Image im1(50, 50);
 
-    std::cout << "- On vérifie les dimensions . " <<;
+    cout << "- On vérifie les dimensions . ";
     assert(im1.dimx == 50);
     assert(im1.dimy == 50);
-    std::cout << ". [V]" << endl;
+    cout << ". [V]" << endl;
 
-    std::cout << "- On vérifie la taille du tableau alloué . " <<;
-    assert((sizeof(tab) / sizeof(int)) = 500);
-    std::cout << ". [V]" << endl;
+    cout << "- On vérifie la taille du tableau alloué . ";
+    assert((sizeof(tab) / sizeof(int)) == 500);
+    cout << ". [V]" << endl;
 
-    std::cout << "- On vérifie que le pixel est noir . " <<;
+    cout << "- On vérifie que le pixel est noir . ";
     for (int i = 0; i < im1.dimx; i++){
         for (int j = 0; j < im1.dimy; j++){
             assert(im1.getPix(j, i).getRouge()==0);
             assert(im1.getPix(j, i).getBleu()==0);
-            assert(im1.getPix(j, i).getVert()==0)
+            assert(im1.getPix(j, i).getVert()==0);
         }
     }
-    std::cout << ". [V]" << endl;
+    cout << ". [V]" << endl;
 
-    std::cout << "-> On rempli l'image d'une couleur. " <<;
+    cout << "-> On rempli l'image d'une couleur. ";
     //TODO remplir
-    for (int i = 0; i <= (y * x); i++){
+    /*for (int i = 0; i <= (y * x); i++){
         //TODO assert
-    }
-    std::cout << ". [V]";
+    }*/
+    cout << ". [V]";
 
-    std::cout << "-> On set un pixel spécifique (au pixel par défaut, à un point tiré en random) ." <<;
+    cout << "-> On set un pixel spécifique (au pixel par défaut, à un point tiré en random) .";
     //TODO set un pixel spécifique
-    std::cout << ". [V]" << endl;
+    cout << ". [V]" << endl;
 
-    std::cout << "## Test de régression terminé !! " << endl;
+    cout << "## Test de régression terminé !! " << endl;
 
 }
