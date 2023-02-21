@@ -6,6 +6,11 @@
 #include <iostream>
 #include <fstream>
 
+#include <SDL.h>
+#include <SDL_ttf.h>
+#include <SDL_image.h>
+#include <SDL_mixer.h>
+
 using namespace std;
 
 class Image {
@@ -44,6 +49,18 @@ public:
 
     //Affiche une image dans la console
     void afficherConsole();
+
+    //SDL : Permet l'initialisation de l'affichage de l'image.
+    void afficherInit();
+
+    //SDL : Permet la gestion des évènements de l'image (zoom/désoom)
+    void afficherBoucle();
+
+    //SDL : Permet de détruire une image affichée
+    void afficherDetruit();
+
+    //SDL : Permet l'affichage d'une image
+    void afficher();
 
     // Effectue une série de tests vérifiant que le module fonctionne et que les données membres de l'objet sont conformes
     void testRegression();
