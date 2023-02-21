@@ -29,7 +29,7 @@ Pixel Image::getPix(const unsigned int &x, const unsigned int &y) const
     return tab[y * dimx + x];
 }
 
-void Image::setPix(unsigned int &x,unsigned int &y, Pixel &couleur)
+void Image::setPix(const unsigned int &x, const unsigned int &y, Pixel &couleur)
 {
     assert(x >= 0 && y >= 0);
     assert(x <= dimx && y <= dimy);

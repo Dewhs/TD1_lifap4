@@ -28,7 +28,7 @@ public:
     Pixel getPix(const unsigned int &x, const unsigned int &y) const;
 
     // Mutateur : modifie le pixel de coordonnée (x, y)
-    void setPix(unsigned int& x,unsigned int& y, Pixel& couleur);
+    void setPix(const unsigned int& x, const unsigned int& y, Pixel& couleur);
 
     // Dessine un rectangle plein de la couleur de l'image
     void dessinerRectangle (unsigned int Xmin,unsigned int Ymin,unsigned int Xmax,unsigned int Ymax, Pixel& couleur);
