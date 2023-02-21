@@ -106,15 +106,15 @@ void Image::afficherInit(){
 
 void Image::afficherBoucle(){
     SDL_Event events;
-    bool (exited) = false;
+    bool exited = false;
 
     //Si la fenêtre est toujours existante
     while(!exited){
         //Si il reste des évènements à traiter
         while(SDL_PollEvent(&events)){
-            if (events.type == SDL_QUIT) quit = true; //Si un utilisateur quitte la fenêtre
+            if (events.type == SDL_QUIT) exited = true; //Si un utilisateur quitte la fenêtre
             else if (events.type == SDL_KEYDOWN){ //Si un utilisateur presse une touche
-                switch (event.key.keysym.scancode)
+                switch (events.key.keysym.scancode)
                 {
                     case SDL_SCANCODE_T:
                         //TODO ZOOM
@@ -123,7 +123,7 @@ void Image::afficherBoucle(){
                         //TODO DEZOOM
                         break;
                     case SDL_SCANCODE_ESCAPE:
-                        quit = true;
+                        exited = true;
                         break;
                     default:
                         break;
@@ -199,8 +199,5 @@ void Image::testRegression()
 
     cout << "-- Test de régression terminé !! -- " << endl;
 
-    delete im1;
-    delete im0;
-    delete px1;
 
 }
