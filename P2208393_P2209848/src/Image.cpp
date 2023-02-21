@@ -198,4 +198,9 @@ void Image::testRegression()
     cout << ". [V]" << endl ;
 
     cout << "-- Test de régression terminé !! -- " << endl;
+
+    delete im1;
+    delete im0;
+    delete px1;
+
 }
