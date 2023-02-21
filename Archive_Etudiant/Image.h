@@ -5,6 +5,8 @@
 #include <assert.h>
 #include <iostream>
 
+using namespace std;
+
 class Image {
 private:
     int dimx, dimy; // les dimensions de l'image
@@ -22,7 +24,7 @@ public:
     ~Image();
 
     // Accesseur : récupère le pixel original de coordonnées (x,y) en vérifiant leur validité
-    Pixel getPix (int& x, int& y);
+    Pixel getPix(const int &x, const int &y) const;
 
     // Mutateur : modifie le pixel de coordonnée (x, y)
     void setPix(int& x, int& y, Pixel& couleur);
@@ -32,6 +34,15 @@ public:
 
     // Efface l'image en la remplissant de la couleur en paramètre
     void effacer(Pixel& couleur);
+
+    //Sauvegarde une image dans un fichier
+    void sauver(const string & filename) const;
+
+    //Ouvre une image depuis un fichier
+    void ouvrir(const string & filename);
+
+    //Affiche une image dans la console
+    void afficherConsole();
 
     // Effectue une série de tests vérifiant que le module fonctionne et que les données membres de l'objet sont conformes
     void testRegression();
