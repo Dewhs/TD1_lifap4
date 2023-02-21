@@ -10,7 +10,7 @@ using namespace std;
 
 class Image {
 private:
-    int dimx, dimy; // les dimensions de l'image
+    unsigned int dimx, dimy; // les dimensions de l'image
     Pixel* tab; // le tableau 1D de pixel
 public:
     // Constructeur par défaut de la classe : initialise à 0
@@ -25,13 +25,13 @@ public:
     ~Image();
 
     // Accesseur : récupère le pixel original de coordonnées (x,y) en vérifiant leur validité
-    Pixel getPix(const int &x, const int &y) const;
+    Pixel getPix(const unsigned int &x, const unsigned int &y) const;
 
     // Mutateur : modifie le pixel de coordonnée (x, y)
-    void setPix(int& x, int& y, Pixel& couleur);
+    void setPix(unsigned int& x,unsigned int& y, Pixel& couleur);
 
     // Dessine un rectangle plein de la couleur de l'image
-    void dessinerRectangle (int Xmin, int Ymin, int Xmax, int Ymax, Pixel& couleur);
+    void dessinerRectangle (unsigned int Xmin,unsigned int Ymin,unsigned int Xmax,unsigned int Ymax, Pixel& couleur);
 
     // Efface l'image en la remplissant de la couleur en paramètre
     void effacer(Pixel& couleur);

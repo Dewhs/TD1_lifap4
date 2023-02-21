@@ -9,7 +9,7 @@ Image::Image()
     tab = nullptr;
 }
 
-Image::Image(int dimensionX, int dimensionY)
+Image::Image(int dimensionX,int dimensionY)
 {
     assert(dimensionX > 0 && dimensionY > 0);
     dimx = dimensionX;
@@ -22,14 +22,14 @@ Image::~Image()
     delete [] tab;
 }
 
-Pixel Image::getPix(const int &x, const int &y) const
+Pixel Image::getPix(const unsigned int &x, const unsigned int &y) const
 {
     assert(x >= 0 && y >= 0);
     assert(x <= dimx && y <= dimy);
     return tab[y * dimx + x];
 }
 
-void Image::setPix(int &x, int &y, Pixel &couleur)
+void Image::setPix(unsigned int &x,unsigned int &y, Pixel &couleur)
 {
     assert(x >= 0 && y >= 0);
     assert(x <= dimx && y <= dimy);
@@ -37,11 +37,11 @@ void Image::setPix(int &x, int &y, Pixel &couleur)
     tab[y * dimx + x] = couleur;
 }
 
-void Image::dessinerRectangle(int Xmin, int Ymin, int Xmax, int Ymax, Pixel &couleur)
+void Image::dessinerRectangle(unsigned int Xmin,unsigned int Ymin,unsigned int Xmax,unsigned int Ymax, Pixel &couleur)
 {
-    for (int i = Xmin; i <= Xmax; i++)
+    for (unsigned int i = Xmin; i < Xmax; i++)
     {
-        for (int j = Ymin; j <= Ymax; j++)
+        for (unsigned int j = Ymin; j < Ymax; j++)
         {
             setPix(i, j, couleur);
         }
@@ -123,8 +123,8 @@ void Image::testRegression()
     cout << ". [V]" << endl;
 
     cout << "> Image vide (tout les pixels sont noirs) . ";
-    for (int i = 0; i < im1.dimx; i++){
-        for (int j = 0; j < im1.dimy; j++){
+    for (unsigned int i = 0; i < im1.dimx; i++){
+        for (unsigned int j = 0; j < im1.dimy; j++){
             assert(im1.getPix(j, i).getRouge()==0);
             assert(im1.getPix(j, i).getBleu()==0);
             assert(im1.getPix(j, i).getVert()==0);
@@ -144,8 +144,8 @@ void Image::testRegression()
 
     cout << "> Remplissage de l'image avec ce pixel . ";
     im1.dessinerRectangle(0, 0, 50, 50, px1);
-    for (int i = 0; i < im1.dimx; i++){
-        for (int j = 0; j < im1.dimy; j++){
+    for (unsigned int i = 0; i < im1.dimx; i++){
+        for (unsigned int j = 0; j < im1.dimy; j++){
             assert(im1.getPix(i, j).getRouge() == px1.getRouge());
             assert(im1.getPix(i, j).getBleu() == px1.getBleu());
             assert(im1.getPix(i, j).getVert() == px1.getVert());
