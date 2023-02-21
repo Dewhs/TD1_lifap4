@@ -53,6 +53,7 @@ void Image::effacer(Pixel &couleur)
 
 void Image::testRegression()
 {
+
     cout << "## Début du test de régression ##" << endl;
 
     cout << "--- On défini une image par défaut (0*0)" << endl;

@@ -4,6 +4,12 @@ FLAGS = -g -Wall -c
 all: main.o Image.o Pixel.o
 	$(CC) main.o Image.o Pixel.o -o Prog.exe
 
+test: mainTest.o Image.o
+	$(CC) mainTest.o Image.o Pixel.o -o ProgTest.exe
+
+mainTest.o : mainTest.cpp Image.o
+	$(CC) $(FLAGS) mainTest.cpp
+
 main.o: main.cpp Image.o
 	$(CC) $(FLAGS) main.cpp
 
