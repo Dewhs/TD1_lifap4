@@ -1,4 +1,4 @@
 .idea/
 /Archive_Etudiant/.vscode
-
-
+/Archive_Etudiant/*.o
+/Archive_Etudiant/*.exe
