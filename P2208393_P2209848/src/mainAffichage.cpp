@@ -28,7 +28,7 @@ int main (int argc, char** argv) {
     image.dessinerRectangle(4,5,6,6,beigeF);
     image.setPix(5,7,beigeF);
 
-    //image.afficher();
+    image.afficher();
 
     return 0;
 }
