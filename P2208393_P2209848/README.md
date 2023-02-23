@@ -6,7 +6,7 @@
 
 
 Module image est un projet pour l'UE LifAPCD (L2 Informatique de l'UCBL).
-L'objectif est de proposer un programme permettant de générer et d'afficher une image via SDL2 (au format ppm)
+L'objectif est de proposer un programme permettant de générer, d'enregistrer au format ppm et d'afficher une image en console, ou graphiquement via SDL2 
 
 ## Contenu 
 
