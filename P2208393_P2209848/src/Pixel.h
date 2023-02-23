@@ -4,7 +4,7 @@
 class Pixel
 {
 private:
-    unsigned char r, g, b;
+    unsigned char r, g, b; /*!< Les composantes rouge, verte et bleu de l'image */
 
 public:
     /** Constructeur d'un pixel avec des valeurs par défaut

@@ -15,8 +15,8 @@ using namespace std;
 
 class Image {
 private:
-    unsigned int dimx, dimy; // les dimensions de l'image
-    Pixel* tab; // le tableau 1D de pixel
+    unsigned int dimx, dimy; /*!< Les dimensions x et y de l'image */
+    Pixel* tab; /*!< Le tableau 1D de l'image */
 public:
 
     /** Constructeur d'une image par défaut
