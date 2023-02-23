@@ -1,5 +1,7 @@
 #include "Pixel.h"
 
+/** Constructeur d'un pixel avec des valeurs par défaut
+ */
 Pixel::Pixel()
 {
     r = 0;
@@ -8,8 +10,7 @@ Pixel::Pixel()
 
 }
 
-/**
- * Constructeur d'un pixel
+/** Constructeur d'un pixel avec des valeurs définies
  * @param nr La composante rouge
  * @param ng La composante verte
  * @param nb La composante bleu
@@ -18,15 +19,13 @@ Pixel::Pixel(unsigned char nr, unsigned char ng, unsigned char nb) : r(nr), g(ng
 {
 }
 
-/**
- * Destructeur d'un pixel
+/** Destructeur d'un pixel
  */
 Pixel::~Pixel() {
     
 }
 
-/**
- * Accesseur de la composante rouge
+/** Accesseur de la composante rouge
  * @return récupère la composante rouge du pixel
  */
 unsigned char Pixel::getRouge() const
@@ -34,8 +33,7 @@ unsigned char Pixel::getRouge() const
     return r;
 }
 
-/**
- * Accesseur de la composante verte
+/** Accesseur de la composante verte
  * @return récupère la composante verte du pixel
  */
 unsigned char Pixel::getVert() const
@@ -43,8 +41,7 @@ unsigned char Pixel::getVert() const
     return g;
 }
 
-/**
- * Accesseur de la composante bleue
+/** Accesseur de la composante bleue
  * @return récupère la composante bleue du pixel
  */
 unsigned char Pixel::getBleu() const
@@ -52,8 +49,7 @@ unsigned char Pixel::getBleu() const
     return b;
 }
 
-/**
- * Mutateur de la composante rouge
+/** Mutateur de la composante rouge
  * @param nr composante rouge souhaité
  * @return défini la composante rouge du pixel
  */
@@ -62,8 +58,7 @@ void Pixel::setRouge(unsigned char nr)
     r = nr;
 }
 
-/**
- * Mutateur de la composante verte
+/** Mutateur de la composante verte
  * @param ng composante verte souhaité
  * @return défini la composante verte du pixel
  */
@@ -72,8 +67,7 @@ void Pixel::setVert(unsigned char ng)
     g = ng;
 }
 
-/**
- * Mutateur de la composante bleue
+/** Mutateur de la composante bleue
  * @param nb composante bleue souhaité
  * @return défini la composante bleue du pixel
  */
