@@ -16,11 +16,29 @@ using namespace std;
 //! \brief Pour gérer une image avec SDL2
 class Image {
 private:
-    unsigned int dimx, dimy; // les dimensions de l'image
-    Pixel* tab; // le tableau 1D de pixel
+    unsigned int dimx, dimy; /*!< Les dimensions x et y de l'image */
+    Pixel* tab; /*!< Le tableau 1D de l'image */
+
+    //Variable pour SDL
+    SDL_Surface * m_surface;
+    SDL_Texture * m_texture;
+    bool m_hasChanged;
+    SDL_Window * window;
+    SDL_Renderer * renderer;
+
+    /** Initialise l'affichage SDL */
+    void afficherInit(int win_dimx, int win_dimy);
+
+    /** Gère les évènements de l'image SDL */
+    void afficherBoucle();
+
+    /** Détruit l'image SDL */
+    void afficherDetruit();
+
+    
+
 public:
-    // Constructeur par défaut de la classe : initialise à 0
-    // ce constructeur n'alloue pas de pixel
+    /** Constructeur d'une image par défaut */
     Image();
     /** Constructeur d'une image avec une dimension précise
     * @param dimensionX dimension sur l'axe x de l'image
@@ -28,8 +46,7 @@ public:
     */
     Image(int dimensionX, int dimensionY);
 
-    // Destructeur de la classe : désallocation de la mémoire du tableau de pixels
-    // et mise à jour des champs dimx et dimy à 0
+    /** Détruit l'image*/
     ~Image();
 
     /** Accesseur : Retourne le pixel de coordonnées (x, y) de l'image
@@ -70,22 +87,14 @@ public:
     */
     void ouvrir(const string & filename);
 
-    //Affiche une image dans la console
+    /** Permet d'afficher l'image en console */
     void afficherConsole();
 
-    //SDL : Permet l'initialisation de l'affichage de l'image.
-    void afficherInit();
-
-    //SDL : Permet la gestion des évènements de l'image (zoom/désoom)
-    void afficherBoucle();
-
-    //SDL : Permet de détruire une image affichée
-    void afficherDetruit();
-
-    //SDL : Permet l'affichage d'une image
+    
+    /** Permet d'afficher l'image en mode graphique avec SDL */
     void afficher();
 
-    // Effectue une série de tests vérifiant que le module fonctionne et que les données membres de l'objet sont conformes
+    /** Effectue une série de tests sur toutes les fonctions de Image.cpp, vérifie le bon fonctionnement des fonctions et vérifie que les données sont conformes */
     void testRegression();
 
 };
